@@ -1,0 +1,19 @@
+development:
+  # Configure available database clients. (required)
+  clients:
+    # Defines the default client. (required)
+    default:
+      uri: mongodb+srv://klink:12345@klinkster-cwd1q.mongodb.net/test?retryWrites=true&w=majority
+      options:
+        server_selection_timeout: 5
+
+test:
+  clients:
+    default:
+      database: klinkster_test
+      hosts:
+        - localhost:27017
+      options:
+        read:
+          mode: :primary
+        max_pool_size: 1
